@@ -185,4 +185,8 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    /**
+     * Our global variables
+     */
+    'blogName' => env('APP_BLOG_NAME', 'Laravel'),
 ];
