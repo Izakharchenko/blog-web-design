@@ -1,0 +1,73 @@
+// Fonts
+@import url("https://fonts.bunny.net/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+    background-color: white;
+}
+
+.blog-header-logo {
+    font-family: "Playfair Display", Georgia, "Times New Roman",
+        serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+    font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", Georgia, "Times New Roman",
+        serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+}
+
+.flex-auto {
+    flex: 0 0 auto;
+}
+
+.h-250 {
+    height: 250px;
+}
+@media (min-width: 768px) {
+    .h-md-250 {
+        height: 250px;
+    }
+}
+
+/* Pagination */
+.blog-pagination {
+    margin-bottom: 4rem;
+}
+
+/*
+* Blog posts
+*/
+.blog-post {
+    margin-bottom: 4rem;
+}
+
+.blog-post-link {
+    text-decoration: none;
+    color: $link;
+}
+
+.blog-post-link:hover,
+.blog-post-link:active {
+    text-decoration: underline;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+}
