@@ -20,7 +20,12 @@
                     <td>{{$category->title}}</td>
                     <td>{{$category->created_at}}</td>
                     <td>
-                        <a href="{{ route('categories.edit', ['category' => $category->id]) }}"><i class="bi bi-pen"></i></a>
+                        <a class="btn btn-primary" role="button" href="{{ route('categories.show', ['category' => $category->id]) }}">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                        <a class="btn btn-primary" role="button" href="{{ route('categories.edit', ['category' => $category->id]) }}">
+                            <i class="bi bi-pen"></i>
+                        </a>
                         <form style="display:inline" action="{{ route('categories.destroy', ['category' => $category->id])}}" method="POST">
                             @csrf
                             @method('DELETE')
