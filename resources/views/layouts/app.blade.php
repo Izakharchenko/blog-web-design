@@ -54,7 +54,7 @@
 
         <div class="nav-scroller py-1 mb-3 border-bottom">
             <nav class="nav nav-underline justify-content-between">
-                <a class="nav-item nav-link link-body-emphasis active" href="#">Home</a>
+                <a class="nav-item nav-link link-body-emphasis active" href="{{ route('post.index')}}">Home</a>
                 <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
                 <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
                 <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
