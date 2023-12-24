@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Auth::routes();
 Route::prefix('dashboard')->group(function () {
     Route::get('/home', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.home');
     Route::resource('users', UserController::class);
+    Route::resource('categories', CategoryController::class);
 });
 
 

@@ -34,7 +34,12 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <!-- add class active -->
-                            <a class="nav-link" aria-current="page" href="{{ route('users.index') }}">Користувачі</a>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}" aria-current="page" href="{{ route('users.index') }}">Користувачі</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}" aria-current="page" href="{{ route('categories.index') }}">Категорії</a>
+                        </li>
                         </li>
                     </ul>
 
