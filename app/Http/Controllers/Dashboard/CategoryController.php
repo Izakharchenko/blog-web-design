@@ -38,7 +38,7 @@ class CategoryController extends Controller
         $category = Category::create($validated);
         $category->save();
 
-        return redirect()->route('categories.index', 201)->with('success', 'Категорію додано');
+        return redirect()->route('categories.index')->with('success', 'Категорію додано');
     }
 
     /**
