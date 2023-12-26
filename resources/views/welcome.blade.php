@@ -6,31 +6,12 @@
         <h3 class="pb-4 mb-4 fst-italic border-bottom">
             Last news
         </h3>
-        <article class="blog-post">
-            <h2 class="display-5 link-body-emphasis mb-1"><a href="#" class="blog-post-link">Sample blog post</a></h2>
-            <p class="blog-post-meta">January 1, 2021 by Mark</p>
-
-            <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic
-                typography, lists, tables, images, code, and more are all supported as expected.</p>
-            <hr>
-        </article>
-
-        <article class="blog-post">
-            <h2 class="display-5 link-body-emphasis mb-1"><a href="#" class="blog-post-link">Sample blog post</a></h2>
-            <p class="blog-post-meta">January 1, 2021 by Mark</p>
-
-            <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic
-                typography, lists, tables, images, code, and more are all supported as expected.</p>
-            <hr>
-        </article>
-        <article class="blog-post">
-            <h2 class="display-5 link-body-emphasis mb-1"><a href="#" class="blog-post-link">Sample blog post</a></h2>
-            <p class="blog-post-meta">January 1, 2021 by Mark</p>
-
-            <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic
-                typography, lists, tables, images, code, and more are all supported as expected.</p>
-            <hr>
-        </article>
+        @foreach($posts as $post)
+        <x-post :post=$post />
+        @endforeach
+        <nav aria-label="post navigation">
+            {{ $posts->withQueryString()->links() }}
+        </nav>
     </div>
     <div class="col-md-4">
         <!-- Need move to component -->
