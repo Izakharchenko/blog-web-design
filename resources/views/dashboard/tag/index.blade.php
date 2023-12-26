@@ -5,7 +5,7 @@
         <div class="col-md-12">
 
     <div> 
-        <a href="{{ route('post.create')}}" class="btn btn-outline-success mb-3">Створити публікацію</a>
+        <a href="{{ route('tags.create')}}" class="btn btn-outline-success mb-3">Додати</a>
     </div>
     <table class="table table-striped border">
                 <thead>
@@ -16,19 +16,19 @@
                         <th scope="col">Дії</th>
                     </tr>
                 </thead>
-                @foreach($posts as $post)
+                @foreach($tags as $tag)
                 <tr scope="row">
-                    <td>{{$post->id}}</td>
-                    <td>{{$post->title}}</td>
-                    <td>{{$post->created_at}}</td>
+                    <td>{{$tag->id}}</td>
+                    <td>{{$tag->title}}</td>
+                    <td>{{$tag->created_at}}</td>
                     <td>
-                        <a class="btn btn-primary" role="button" href="{{ route('post.show', ['post' => $post->id]) }}">
+                        <a class="btn btn-primary" role="button" href="{{ route('tags.show', ['tag' => $tag->id]) }}">
                             <i class="bi bi-eye"></i>
                         </a>
-                        <a class="btn btn-primary" role="button" href="{{ route('post.edit', ['post' => $post->id]) }}">
+                        <a class="btn btn-primary" role="button" href="{{ route('tags.edit', ['tag' => $tag->id]) }}">
                             <i class="bi bi-pen"></i>
                         </a>
-                        <form style="display:inline" action="{{ route('post.delete', ['post' => $post->id])}}" method="POST">
+                        <form style="display:inline" action="{{ route('tags.destroy', ['tag' => $tag->id])}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn bnt-danger" type="submit"><i class="bi bi-trash3"></i></button>
@@ -39,7 +39,7 @@
 
             </table>
             <nav aria-label="post navigation">
-                {{ $posts->withQueryString()->links() }}
+                {{ $tags->withQueryString()->links() }}
             </nav>
     
     </div>

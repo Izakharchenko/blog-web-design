@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,6 +30,8 @@ Route::prefix('dashboard')->middleware(['auth', 'author'])->group(function () {
     Route::get('/home', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.home')->withoutMiddleware('author');
     Route::resource('users', UserController::class);
     Route::resource('categories', CategoryController::class);
+    Route::resource('tags', TagController::class);
+    
     Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
     Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
     Route::post('/posts', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');

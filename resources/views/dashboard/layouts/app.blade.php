@@ -40,7 +40,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('post.*') ? 'active' : '' }}" aria-current="page" href="{{ route('post.index') }}">Новини</a>
-                        </li>   
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('tags.*') ? 'active' : '' }}" aria-current="page" href="{{ route('tags.index') }}">Теги</a>
+                        </li>    
                     </ul>
 
                     <!-- Right Side Of Navbar -->
