@@ -19,10 +19,10 @@
     <div class="container">
         <header class="border-bottom lh-1 py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
-                <div class="col-4">
+                <div class="col-4 col-sm-8 col-sx-12">
                     <a class="blog-header-logo text-body-emphasis text-decoration-none" href="{{ url('/') }}">Blog about web design</a>
                 </div>
-                <div class="col-4 d-flex justify-content-end align-items-center">
+                <div class="col-4 col-xs-12 d-flex justify-content-end align-items-center">
                     <a class="link-secondary" href="#" aria-label="Search">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24">
                             <title>Search</title>

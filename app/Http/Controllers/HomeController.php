@@ -26,6 +26,7 @@ class HomeController extends Controller
 
     public function show(Post $post)
     {
-        return;
+        $post = Post::with('comments', 'comments.user', 'user')->find($post->id);
+        return view('show', compact('post'));
     }
 }

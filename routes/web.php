@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Dashboard\CategoryController;
-use App\Http\Controllers\Dashboard\UserController;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Dashboard\CategoryController;
 
 
 /*
@@ -24,6 +25,8 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/show/{post}', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
+Route::resource('comments', CommentController::class);
 
 Route::prefix('dashboard')->middleware(['auth', 'author'])->group(function () {
     Route::get('/home', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.home')->withoutMiddleware('author');
