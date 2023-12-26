@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 
 class Post extends Model
@@ -29,6 +30,8 @@ class Post extends Model
         {
             static::creating(function ($post) {
                 $post->user_id = Auth::id();
+                $post->url = Str::slug($post->title);
+
             });
         }
 }
