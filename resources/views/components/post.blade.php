@@ -5,6 +5,6 @@
         </a>
     </h2>
     <p class="blog-post-meta">{{ $post->created_at->format('M, d Y')  }} by {{ $post->user->full_name }}</p>
-    <p>{{ Str::of($post->text)->limit(220) }}</p>
+    <p>{{ Str::of(strip_tags($post->text))->limit(220) }}</p>
     <hr>
 </article>

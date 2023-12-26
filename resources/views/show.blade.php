@@ -7,7 +7,7 @@
                 {{ $post->title }}
         </h2>
         <p class=" blog-post-meta">{{ $post->created_at->format('M, d Y')  }} by {{ $post->user->full_name }}</p>
-            {{ $post->text }}
+            {!! $post->text !!}
 
 
             <div class="container my-2 pb-2 text-dark">
