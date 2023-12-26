@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreignId('user_id')->constrained('users');
             $table->string('title');
             $table->text('text');
             $table->string('cover');
@@ -23,7 +24,7 @@ return new class extends Migration
             //index for FK category_id
             $table->index('category_id', 'post_category_idx');
             //FK category_id
-            $table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
+            $table->foreign('category_id', 'post_category_fk')->on('categories')->onDelete('no action')->references('id');
         });
     }
 

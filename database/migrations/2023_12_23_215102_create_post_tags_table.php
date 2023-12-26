@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('post_tags', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('post_id');
-            $table->unsignedBigInteger('tag_id');
+            $table->unsignedBigInteger('post_id')->nullable();
+            $table->unsignedBigInteger('tag_id')->nullable();
             $table->timestamps();
 
             $table->index('post_id', 'post_tag_post_idx');
             $table->index('tag_id', 'post_tag_tag_idx');
 
-            $table->foreign('post_id', 'post_tag_post_fk')->on('posts')->references('id');
-            $table->foreign('tag_id', 'post_tag_tag_fk')->on('tags')->references('id');
+            $table->foreign('post_id', 'post_tag_post_fk')->on('posts')->onDelete('set null')->references('id');
+            $table->foreign('tag_id', 'post_tag_tag_fk')->on('tags')->onDelete('set null')->references('id');
 
         });
     }

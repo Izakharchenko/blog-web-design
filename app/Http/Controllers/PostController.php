@@ -13,26 +13,26 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(10);
         
-        return view('post.index', compact('posts'));
+        return view('dashboard.post.index', compact('posts'));
     }
 
     public function create()
     {
         $categories = Category::all();
         $tags = Tag::all();
-        return view('post.create', compact('categories', 'tags'));
+        return view('dashboard.post.create', compact('categories', 'tags'));
     }
 
     public function store()
     {
         $data = request()->validate([
-            'title' => 'string',
-            'text' => 'string',
-            'cover' => 'string',
-            'category_id' => '',
-            'tags' => '', 
+            'title' => 'required | string',
+            'text' => 'required | string',
+            'cover' => 'required | string',
+            'category_id' => 'required ',
+            'tags' => 'required ', 
         ]);
     
         $tags = $data['tags'];
@@ -45,12 +45,12 @@ class PostController extends Controller
     
 
     public function show(Post $post){
-        return view('post.show', compact('post'));
+        return view('dashboard.post.show', compact('post'));
     }
 
     public function edit(Post $post){
         $categories = Category::all();
-        return view('post.edit', compact('post','categories'));
+        return view('dashboard.post.edit', compact('post','categories'));
     }
 
     public function update(Post $post)
@@ -70,6 +70,7 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+        $post->tags()->detach();
         $post->delete();
         return redirect()->route('post.index');
     }

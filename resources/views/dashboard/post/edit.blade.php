@@ -1,5 +1,8 @@
-@extends('layouts.app')
+@extends('dashboard.layouts.app')
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
 <form action="{{route('post.update', $post->id)}}" method="post">
     @csrf
     @method('patch')
@@ -30,4 +33,8 @@
 </form>
 
 <a href="{{ route('post.index')}}" class="btn btn-dark"> Back </a>
+
+</div>
+    </div>
+</div>
 @endsection

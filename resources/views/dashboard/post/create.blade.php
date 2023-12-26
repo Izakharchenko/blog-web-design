@@ -1,5 +1,8 @@
-@extends('layouts.app')
+@extends('dashboard.layouts.app')
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
 <form action="{{route('post.store')}}" method="post">
     @csrf
   <div class="form-group">
@@ -31,8 +34,12 @@
   </select>
 </div>
 
-  <button type="submit" class="btn btn-primary mb-3">Create</button>
+  <button type="submit" class="btn btn-primary mb-3 mt-3">Create</button>
 </form>
 
-<a href="{{ route('post.index')}}" class="btn btn-dark"> Back </a>
+<a href="{{ route('post.index')}}" class="btn btn-dark mb-3"> Back </a>
+
+</div>
+    </div>
+</div>
 @endsection

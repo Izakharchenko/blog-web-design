@@ -33,14 +33,14 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <!-- add class active -->
-                        <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}" aria-current="page" href="{{ route('users.index') }}">Користувачі</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}" aria-current="page" href="{{ route('categories.index') }}">Категорії</a>
                         </li>
-                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('post.*') ? 'active' : '' }}" aria-current="page" href="{{ route('post.index') }}">Новини</a>
+                        </li>   
                     </ul>
 
                     <!-- Right Side Of Navbar -->
