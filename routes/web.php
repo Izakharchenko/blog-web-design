@@ -25,8 +25,8 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('dashboard')->group(function () {
-    Route::get('/home', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.home');
+Route::prefix('dashboard')->middleware(['auth', 'author'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.home')->withoutMiddleware('author');
     Route::resource('users', UserController::class);
     Route::resource('categories', CategoryController::class);
     Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.index');
@@ -37,8 +37,3 @@ Route::prefix('dashboard')->group(function () {
     Route::patch('/posts/{post}', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
     Route::delete('/posts/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.delete');
 });
-
-
-
-
-
