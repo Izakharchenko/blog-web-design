@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCommentRequest;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,8 +28,14 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCommentRequest $request)
     {
+        $validated = $request->validated();
+
+        $comment = Comment::create($validated);
+        $comment->save();
+
+        return back();
     }
 
     /**
@@ -68,6 +75,6 @@ class CommentController extends Controller
             $comment->delete();
         }
 
-        // return back;
+        return back();
     }
 }
