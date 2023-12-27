@@ -19,14 +19,14 @@ class HomeController extends Controller
 
     public function index()
     {
-        $posts = Post::with('user')->simplePaginate(10);
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->simplePaginate(10);
 
         return view('welcome', compact('posts'));
     }
 
     public function show(Post $post)
     {
-        $post = Post::with('comments', 'comments.user', 'user')->find($post->id);
+        $post = Post::with('comments', 'user')->find($post->id);
         return view('show', compact('post'));
     }
 }

@@ -13,7 +13,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::paginate(10);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         return view('dashboard.post.index', compact('posts'));
     }
@@ -69,8 +69,7 @@ class PostController extends Controller
             // 'tags' => 'required ',
 
         ]);
-
-        if ($data['cover']) {
+        if (request()->has('cover')) {
             $imagePath = request()->file('cover')->store('public/images');
             $data['cover'] = $imagePath;
         } else {
