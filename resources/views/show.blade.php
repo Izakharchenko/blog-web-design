@@ -3,7 +3,8 @@
 @section('content')
 <div class="row g-5">
     <div class="col-md-8">
-        <h2 class="pb-4 mb-4 fst-italic border-bottom"">
+        <img src="{{ Storage::url($post->cover) }}" alt="{{ $post->title }}" class="img-fluid card-img-top">
+        <h2 class="pb-4 mt-4 mb-4 fst-italic border-bottom"">
                 {{ $post->title }}
         </h2>
         <p class=" blog-post-meta">{{ $post->created_at->format('M, d Y')  }} by {{ $post->user->full_name }}</p>

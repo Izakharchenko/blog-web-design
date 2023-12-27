@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <form action="{{route('post.update', $post->id)}}" method="post">
+            <form action="{{route('post.update', $post->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
                 <div class="form-group">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="cover">Cover</label>
-                    <input type="text" name='cover' class="form-control" id="cover" placeholder="cover" value="{{$post->cover}}">
+                    <input type="file" name="cover" id="image" class="form-control" placeholder="cover" required value="{{$post->cover}}">
                 </div>
                 <div class="form-group">
                     <label for="category">Category</label>

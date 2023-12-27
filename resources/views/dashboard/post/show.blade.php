@@ -3,9 +3,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            <img src="{{ Storage::url($post->cover) }}" alt="{{ $post->title }}" class="img-fluid card-img-top">
             <div> {{$post->id}}. {{$post->title}} </div>
             <div> {!!$post->text !!}</div>
-            <div> {{$post->cover}} </div>
 
             <div>
                 <a href="{{ route('post.edit', $post->id)}}" class="btn btn-primary mb-3"> Edit </a>
