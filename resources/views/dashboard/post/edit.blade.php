@@ -31,7 +31,7 @@
                     <label for="tags">Tags</label>
                     <select multiple class="form-control" id="tags" name="tags[]">
                         @foreach($tags as $tag)
-                        <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+                        <option @selected($post->tags->contains($tag->id)) value="{{ $tag->id }}">{{ $tag->title }}</option>
                         @endforeach
                     </select>
                 </div>

@@ -57,6 +57,8 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $tags = Tag::all();
+        $post->load('tags');
+
         return view('dashboard.post.edit', compact('post', 'categories', 'tags'));
     }
 
