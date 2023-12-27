@@ -28,6 +28,7 @@ Auth::routes();
 
 Route::group(['middleware' => SharedViewDataMiddleware::class], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/tags', [App\Http\Controllers\HomeController::class, 'tags'])->name('tags');
     Route::get('/show/{post}', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
     Route::resource('comments', CommentController::class);
 });

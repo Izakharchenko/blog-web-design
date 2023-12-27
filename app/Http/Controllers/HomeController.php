@@ -22,11 +22,20 @@ class HomeController extends Controller
     {
         $data = $request->validate([
             'category_id' => 'nullable|int',
+            'tag_id' => 'nullable|int',
         ]);
 
-        $posts = Post::with('user')->when($request->has('category_id'), function ($q) use ($data) {
+        $posts = Post::with('user', 'tags')->when($request->has('category_id'), function ($q) use ($data) {
             $q->where('category_id', $data['category_id']);
-        })->orderBy('created_at', 'desc')->simplePaginate(10);
+        })
+        // ->whereHas('tags', function($q) use($data) {
+        //     $q->where('tag_id',  $data['tag_id']);
+        // })
+        // ->when($request->has('tag_id'), function ($q) use ($data) {
+        //     $q->tags()->where('id', $data['tag_id']);
+        // })
+        ->orderBy('created_at', 'desc')
+        ->simplePaginate(10);
 
         return view('welcome', compact('posts'));
     }
@@ -37,9 +46,21 @@ class HomeController extends Controller
         return view('show', compact('post'));
     }
 
-    public function categories()
+    
+
+    public function tags(Request $request)
     {
-        // $category = Category::select('id', 'title')->get();
-        // return
+        $data = $request->validate([
+            'tag_id' => 'nullable|int',
+        ]);
+
+        $posts = Post::with('user', 'tags')
+        ->whereHas('tags', function($q) use($data) {
+            $q->where('tag_id',  $data['tag_id']);
+        })
+        ->orderBy('created_at', 'desc')
+        ->simplePaginate(10);
+
+        return view('welcome', compact('posts'));
     }
 }
