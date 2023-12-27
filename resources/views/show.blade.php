@@ -8,6 +8,11 @@
                 {{ $post->title }}
         </h2>
         <p class=" blog-post-meta">{{ $post->created_at->format('M, d Y')  }} by {{ $post->user->full_name }}</p>
+            <p class="mt-3">
+                @foreach($post->tags as $tag)
+                <span class="badge bg-secondary"> {{ $tag->title }}</span>
+                @endforeach
+            </p>
             {!! $post->text !!}
 
 

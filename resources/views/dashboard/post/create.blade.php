@@ -16,7 +16,6 @@
                 <div class="form-group">
                     <label for="cover">Cover</label>
                     <input type="file" name="cover" id="image" class="form-control" placeholder="cover" required>
-                    <!-- <input type="text" name='cover' class="form-control" id="cover" placeholder="cover"> -->
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1 ">Category</label>

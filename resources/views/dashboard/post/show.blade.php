@@ -4,6 +4,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <img src="{{ Storage::url($post->cover) }}" alt="{{ $post->title }}" class="img-fluid card-img-top">
+
+            <p class="mt-3">
+                @foreach($post->tags as $tag)
+                <span class="badge bg-secondary"> {{ $tag->title }}</span>
+                @endforeach
+            </p>
+
+
             <div> {{$post->id}}. {{$post->title}} </div>
             <div> {!!$post->text !!}</div>
 

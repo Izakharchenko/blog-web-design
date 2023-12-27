@@ -49,6 +49,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $post->load('tags');
         return view('dashboard.post.show', compact('post'));
     }
 
@@ -66,9 +67,10 @@ class PostController extends Controller
             'text' => 'string',
             'cover' => 'nullable|image|max:2048',
             'category_id' => '',
-            // 'tags' => 'required ',
+            'tags' => 'required ',
 
         ]);
+
         if (request()->has('cover')) {
             $imagePath = request()->file('cover')->store('public/images');
             $data['cover'] = $imagePath;
@@ -76,11 +78,13 @@ class PostController extends Controller
             $data['cover'] = $post->cover;
         }
 
-        // $tags = $data['tags'];
-        // unset($data['tags']);
+        $tags = $data['tags'];
+        unset($data['tags']);
 
         $post->update($data);
-        // $post->tags()->attach($tags);
+
+        $post->tags()->sync($tags, true); // 2nd param = detach
+
         return redirect()->route('post.show', $post->id);
     }
 
