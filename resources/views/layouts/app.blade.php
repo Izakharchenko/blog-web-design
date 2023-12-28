@@ -16,6 +16,8 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v18.0&appId=907478524222207" nonce="qORemSHL"></script>
     <div class="container">
         <header class="border-bottom lh-1 py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
@@ -23,7 +25,7 @@
                     <a class="blog-header-logo text-body-emphasis text-decoration-none" href="{{ url('/') }}">Blog about web design</a>
                 </div>
                 <div class="col-4 col-xs-12 d-flex justify-content-end align-items-center">
-                    
+
                     @if (Route::has('login'))
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                         @auth
