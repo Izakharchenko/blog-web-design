@@ -7,6 +7,7 @@
             Last news
         </h3>
         @foreach($posts as $post)
+        <img src="{{ Storage::url($post->cover) }}" alt="{{ $post->title }}" class="img-fluid card-img-top">
         <x-post :post=$post />
         @endforeach
         <nav aria-label="post navigation">
