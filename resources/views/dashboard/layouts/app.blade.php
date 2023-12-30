@@ -34,6 +34,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @if(Auth::check() && Auth::user()->is_author) 
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}" aria-current="page" href="{{ route('users.index') }}">Користувачі</a>
@@ -46,7 +47,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('tags.*') ? 'active' : '' }}" aria-current="page" href="{{ route('tags.index') }}">Теги</a>
-                        </li>    
+                        </li>  
+                        @endif
+  
                     </ul>
 
                     <!-- Right Side Of Navbar -->
