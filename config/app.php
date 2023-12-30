@@ -188,5 +188,5 @@ return [
     /**
      * Our global variables
      */
-    'blogName' => env('APP_BLOG_NAME', 'Laravel'),
+    'blogName' => env('APP_BLOG_NAME', 'Home'),
 ];
