@@ -29,6 +29,7 @@ class StoreCommentRequest extends FormRequest
         return [
             'post_id' => 'required|exists:App\Models\Post,id',
             'text' => 'required|string|max:255',
+            'comment_id' => 'nullable'
         ];
     }
 }

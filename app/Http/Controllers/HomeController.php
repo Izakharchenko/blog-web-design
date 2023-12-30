@@ -28,25 +28,26 @@ class HomeController extends Controller
         $posts = Post::with('user', 'tags')->when($request->has('category_id'), function ($q) use ($data) {
             $q->where('category_id', $data['category_id']);
         })
-        // ->whereHas('tags', function($q) use($data) {
-        //     $q->where('tag_id',  $data['tag_id']);
-        // })
-        // ->when($request->has('tag_id'), function ($q) use ($data) {
-        //     $q->tags()->where('id', $data['tag_id']);
-        // })
-        ->orderBy('created_at', 'desc')
-        ->simplePaginate(10);
+            // ->whereHas('tags', function($q) use($data) {
+            //     $q->where('tag_id',  $data['tag_id']);
+            // })
+            // ->when($request->has('tag_id'), function ($q) use ($data) {
+            //     $q->tags()->where('id', $data['tag_id']);
+            // })
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate(10);
 
         return view('welcome', compact('posts'));
     }
 
     public function show(Post $post)
     {
-        $post = Post::with('comments', 'user', 'tags')->find($post->id);
+        $post = Post::with(['comments.comments', 'user', 'tags'])->find($post->id);
+
         return view('show', compact('post'));
     }
 
-    
+
 
     public function tags(Request $request)
     {
@@ -55,11 +56,11 @@ class HomeController extends Controller
         ]);
 
         $posts = Post::with('user', 'tags')
-        ->whereHas('tags', function($q) use($data) {
-            $q->where('tag_id',  $data['tag_id']);
-        })
-        ->orderBy('created_at', 'desc')
-        ->simplePaginate(10);
+            ->whereHas('tags', function ($q) use ($data) {
+                $q->where('tag_id',  $data['tag_id']);
+            })
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate(10);
 
         return view('welcome', compact('posts'));
     }

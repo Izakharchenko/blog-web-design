@@ -1,4 +1,4 @@
-<article class="blog-post" {{ $post }}>
+<article class="blog-post">
     <h2 class="display-6 link-body-emphasis mb-1">
         <a href="{{ route('show', ['post' => $post->id ]) }}" class="blog-post-link">
             {{ $post->title }}
