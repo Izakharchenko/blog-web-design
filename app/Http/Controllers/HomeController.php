@@ -13,10 +13,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     public function index(Request $request)
     {
@@ -28,12 +24,6 @@ class HomeController extends Controller
         $posts = Post::with('user', 'tags')->when($request->has('category_id'), function ($q) use ($data) {
             $q->where('category_id', $data['category_id']);
         })
-            // ->whereHas('tags', function($q) use($data) {
-            //     $q->where('tag_id',  $data['tag_id']);
-            // })
-            // ->when($request->has('tag_id'), function ($q) use ($data) {
-            //     $q->tags()->where('id', $data['tag_id']);
-            // })
             ->orderBy('created_at', 'desc')
             ->simplePaginate(10);
 
