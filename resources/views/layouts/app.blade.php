@@ -29,7 +29,9 @@
                     @if (Route::has('login'))
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                         @auth
-                        <a href="{{ url('/dashboard/home') }}" class="btn btn-sm btn-outline-secondary">Dashboard</a>
+                        @if(Auth::check() && Auth::user()->is_author)
+                        <a href="{{ url('/dashboard/posts') }}" class="btn btn-sm btn-outline-secondary">Dashboard</a>
+                        @endif
                         <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-secondary" onclick="event.preventDefault();document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
