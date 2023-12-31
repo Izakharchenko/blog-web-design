@@ -29,14 +29,14 @@
 
                 <div class="form-group">
                     <label for="tags">Tags</label>
-                    <select multiple class="form-control" id="tags" name="tags[]">
+                    <select multiple class="form-control form-control-lg" id="tags" name="tags[]">
                         @foreach($tags as $tag)
                         <option @selected($post->tags->contains($tag->id)) value="{{ $tag->id }}">{{ $tag->title }}</option>
                         @endforeach
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-3">Edit</button>
+                <button type="submit" class="btn btn-primary mb-3 mt-3">Edit</button>
             </form>
 
             <a href="{{ route('post.index')}}" class="btn btn-dark"> Back </a>
