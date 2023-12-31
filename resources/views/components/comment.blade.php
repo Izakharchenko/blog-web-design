@@ -10,7 +10,7 @@
     @endif
     <div class=" mb-3">
         <label for="comment" class="form-label">Comment</label>
-        <textarea class="form-control" rows="3" name="text" class="@error('text') is-invalid @enderror"></textarea>
+        <textarea class="form-control" rows="2" name="text" class="@error('text') is-invalid @enderror"></textarea>
     </div>
     <input @disabled(!Auth::check()) type="submit" class="btn btn-light" value="Submit" form="comment{{ $comment !== null ? $comment->id : '' }}"></input>
 </form>
