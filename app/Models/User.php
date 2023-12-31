@@ -11,7 +11,6 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $guarded = false;
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +20,7 @@ class User extends Authenticatable
         'full_name',
         'email',
         'password',
+        'is_author'
     ];
 
     /**
