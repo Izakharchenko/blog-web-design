@@ -4,14 +4,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <a href="{{ route('categories.create') }}" class="btn btn-outline-success mb-3">Додати</a>
+            <a href="{{ route('categories.create') }}" class="btn btn-outline-success mb-3">Add new category</a>
             <table class="table table-striped border">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Категорія</th>
-                        <th scope="col">Створено</th>
-                        <th scope="col">Дії</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Date of creation</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 @foreach($categories as $category)

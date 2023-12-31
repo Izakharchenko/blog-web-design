@@ -8,7 +8,7 @@
                 @method('PUT')
                 @csrf
                 <div class="mb-3">
-                    <label for="full_name" class="form-label">Повне ім'я</label>
+                    <label for="full_name" class="form-label">Full name</label>
                     <input type="text" name="full_name" class="form-control" id="full_name" placeholder="ПІБ" value="{{ $user->full_name }}">
                 </div>
                 <div class="mb-3">
@@ -16,15 +16,15 @@
                     <input type="email" name="email" class="form-control" id="email" value="{{ $user->email }}" />
                 </div>
                 <div class="mb-3">
-                    <label for="is_author" class="form-label">Автор</label>
+                    <label for="is_author" class="form-label">Author</label>
                     <select name="is_author" class="form-select" aria-label="Чи автор" id="is_author">
-                        <option value="1" @if($user->is_author == 1) selected @endif>Так</option>
-                        <option value="0" @if($user->is_author == 0 ) selected @endif>Ні</option>
+                        <option value="1" @if($user->is_author == 1) selected @endif>Yes</option>
+                        <option value="0" @if($user->is_author == 0) selected @endif>No</option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <form>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
         </div>
     </div>
 </div>

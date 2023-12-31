@@ -46,10 +46,8 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         $validated = $request->validated();
-
         $user->update($validated);
-
-        return redirect()->route('users.index')->with('success', 'Дані користувача оновлені!');
+        return redirect()->route('users.index')->with('success', 'User data has been updated!');
     }
 
 
@@ -57,11 +55,11 @@ class UserController extends Controller
     {
         if (Auth::id() !== $user->id) {
             $user->delete();
-            $message = "Користувача $user->full_name було видалено!";
+            $message = "The user $user->full_name has been deleted!";
 
             return redirect()->route('users.index')->with('success', $message);
         }
 
-        return redirect()->route('users.index')->withErrors("Щось пішло не так");
+        return redirect()->route('users.index')->withErrors("Something has gone wrong");
     }
 }

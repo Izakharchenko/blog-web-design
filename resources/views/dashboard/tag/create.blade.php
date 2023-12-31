@@ -8,12 +8,12 @@
                 @csrf
                 <div class="mb-3">
                     <div class="form-group">
-                        <label for="title">Тег</label>
-                        <input type="text" name='title' class="form-control" id="title" placeholder="Тег">
+                        <label for="title">Tag</label>
+                        <input type="text" name='title' class="form-control" id="title" placeholder="Tag">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Зберегти</button>
+                <button type="submit" class="btn btn-primary">Add</button>
             </form>
         </div>
     </div>

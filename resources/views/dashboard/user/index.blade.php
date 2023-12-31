@@ -8,11 +8,11 @@
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Повне ім'я</th>
+                        <th scope="col">Full name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Автор</th>
-                        <th scope="col">Створено</th>
-                        <th scope="col">Дії</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Creation date</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 @foreach($users as $user)
@@ -20,7 +20,7 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->full_name}}</td>
                     <td>{{$user->email}}</td>
-                    <td>{{$user->is_author ? 'Так': 'Ні'}}</td>
+                    <td>{{$user->is_author ? 'Yes': 'No'}}</td>
                     <td>{{$user->created_at}}</td>
                     <td>
                         <a href="{{ route('users.edit', ['user' => $user->id]) }}"><i class="bi bi-pen"></i></a>

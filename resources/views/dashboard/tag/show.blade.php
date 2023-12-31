@@ -7,8 +7,8 @@
             <table class="table table-striped border">
                 <thead>
                     <tr>
-                        <th scope="col">Ключ</th>
-                        <th scope="col">Значення</th>
+                        <th scope="col">id</th>
+                        <th scope="col">Value</th>
                     </tr>
                 </thead>
                 <tr scope="row">
@@ -16,15 +16,15 @@
                     <td>{{$tag->id}}</td>
                 </tr>
                 <tr scope="row">
-                    <td>Категорія</td>
+                    <td>Tag</td>
                     <td>{{$tag->title}}</td>
                 </tr>
                 <tr scope="row">
-                    <td>Створено</td>
+                    <td>Date of creation</td>
                     <td>{{$tag->created_at}}</td>
                 </tr>
                 <tr scope="row">
-                    <td>Редаговано</td>
+                    <td>Date of editing</td>
                     <td>{{$tag->updated_at}}</td>
                 </tr>
         </div>

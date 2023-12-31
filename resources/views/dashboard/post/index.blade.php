@@ -5,15 +5,15 @@
         <div class="col-md-12">
 
     <div> 
-        <a href="{{ route('post.create')}}" class="btn btn-outline-success mb-3">Створити публікацію</a>
+        <a href="{{ route('post.create')}}" class="btn btn-outline-success mb-3">Create a new post</a>
     </div>
     <table class="table table-striped border">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Заголовок</th>
-                        <th scope="col">Створено</th>
-                        <th scope="col">Дії</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date of creation</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 @foreach($posts as $post)

@@ -37,16 +37,16 @@
                     @if(Auth::check() && Auth::user()->is_author) 
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}" aria-current="page" href="{{ route('users.index') }}">Користувачі</a>
+                            <a class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}" aria-current="page" href="{{ route('users.index') }}">Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}" aria-current="page" href="{{ route('categories.index') }}">Категорії</a>
+                            <a class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}" aria-current="page" href="{{ route('categories.index') }}">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('post.*') ? 'active' : '' }}" aria-current="page" href="{{ route('post.index') }}">Новини</a>
+                            <a class="nav-link {{ request()->routeIs('post.*') ? 'active' : '' }}" aria-current="page" href="{{ route('post.index') }}">Publications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('tags.*') ? 'active' : '' }}" aria-current="page" href="{{ route('tags.index') }}">Теги</a>
+                            <a class="nav-link {{ request()->routeIs('tags.*') ? 'active' : '' }}" aria-current="page" href="{{ route('tags.index') }}">Tags</a>
                         </li>  
                         @endif
   

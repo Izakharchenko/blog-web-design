@@ -9,12 +9,12 @@
                 @method('put')
                 <div class="mb-3">
                     <div class="form-group">
-                        <label for="title">Тег</label>
-                        <input type="text" name='title' class="form-control" id="title" placeholder="Тег" value="{{$tag->title}}">
+                        <label for="title">Tag</label>
+                        <input type="text" name='title' class="form-control" id="title" placeholder="Tag" value="{{$tag->title}}">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Оновити</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>

@@ -9,12 +9,12 @@
                 @method('put')
                 <div class="mb-3">
                     <div class="form-group">
-                        <label for="title">Категорія</label>
+                        <label for="title">Category</label>
                         <input type="text" name='title' class="form-control" id="title" placeholder="Категорія" value="{{$category->title}}">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Оновити</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>

@@ -8,12 +8,12 @@
                 @csrf
                 <div class="mb-3">
                     <div class="form-group">
-                        <label for="title">Категорія</label>
-                        <input type="text" name='title' class="form-control" id="title" placeholder="Категорія">
+                        <label for="title">Category</label>
+                        <input type="text" name='title' class="form-control" id="title" placeholder="Category">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Зберегти</button>
+                <button type="submit" class="btn btn-primary">Add</button>
             </form>
         </div>
     </div>

@@ -32,7 +32,7 @@ class TagController extends Controller
         $tag = Tag::create($validated);
         $tag->save();
 
-        return redirect()->route('tags.index')->with('success', 'Тег додано');
+        return redirect()->route('tags.index')->with('success', 'Tag added!');
     }
 
  
@@ -54,7 +54,7 @@ class TagController extends Controller
 
         $tag->update($validated);
 
-        return redirect()->route('tags.index', 200)->with('success', 'Тег оновлено');
+        return redirect()->route('tags.index', 200)->with('success', 'The tag has been updated!');
     }
 
 
@@ -62,6 +62,6 @@ class TagController extends Controller
     {
         $tag->delete();
 
-        return redirect()->route('tags.index')->with('success', "Тег $tag->title видалено");
+        return redirect()->route('tags.index')->with('success', "The tag $tag->title tag has been removed!");
     }
 }
